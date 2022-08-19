@@ -1,19 +1,61 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<!--     <meta property="al:ios:url" content="mcdonalds.app://applinks?openexternalbrowser=1&actionType=1&parameters=1392384169658978305" /> -->
-        <meta property="al:ios:url" content="itms-apps://itunes.apple.com/app/id1607656419" />
-    <meta property="al:ios:app_store_id" content="1094635803" />
-    <meta property="al:ios:app_name" content="麥當勞_QA" />
-    <meta property="og:title" content="麥當勞_applinks" />
-    <meta property="og:type" content="website" />
-    <title>deeplink</title>
-</head>
-<body>
-    <a href="itms-apps://itunes.apple.com/app/id1607656419">下载App</a>
-    <image src="https://hans960586007.github.io/HansTools/qr.png"></image>
-</body>
+<html lang="zh">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="theme-color" content="#000000" />
+    <meta name="description" content="码上来料-APP下载页" />
+    <script>
+      function isIOS() {
+        var u = navigator.userAgent;
+        // var isAndroid = u.indexOf('Android') > -1 || u.indexOf('Adr') > -1; //android终端
+        var isiOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); //ios终端
+        return isiOS
+      }
+      function isWeixin() {
+        var ua = navigator.userAgent.toLowerCase();
+        return ua.match(/MicroMessenger/i) == "micromessenger";
+      }
+      function downloadApk() {
+        if(isWeixin() && !isIOS()) {
+          alert('请点击右上角在【浏览器打开】进行下载');
+          return;
+        }
+        var url = "https://mashangll.oss-accelerate.aliyuncs.com/app-release.apk";
+        if(isIOS()){
+          url = "https://apps.apple.com/cn/app/%E7%9F%A5%E8%AF%86%E7%B2%BE%E7%81%B5/id1630284340";
+        }
+        window.open(url, "_blank");
+      }
+    </script>
+    <title>码上来料-APP下载页</title>
+    <style>
+      /* These styles make the body full-height */
+      html,
+      body {
+        height: 100%;
+      }
+      /* These styles disable body scrolling if you are using <ScrollView> */
+      body {
+        overflow: hidden;
+        margin-bottom: 50px;
+      }
+      /* These styles make the root element full-height */
+      #root {
+        display: flex;
+        height: 100%;
+      }
+    </style>
+  </head>
+  
+  <body>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div
+      style="display: flex; height: 100%; flex-direction: column; justify-content: center; align-items: center; background: #FFFFFF;">
+      <img src="icon-192x192.png" style="width: 100px; height: 100px; margin-bottom: 30px; " />
+      <span style="font-size: 13px;font-weight: 400;color: #888888;margin-bottom: 30px;">下载APP更方便，实时接收作者动态</span>
+      <a onclick="downloadApk()"
+        style="background: #D90000;border-radius: 30px;font-size: 26px; text-align: center; line-height: 50px; font-weight: 500;color: #FFFFFF; height: 50px; width: 70%; margin-bottom: 30px;">立即下载</a>
+    </div>
+  </body>
 </html>
