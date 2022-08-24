@@ -6,56 +6,24 @@
     <meta name="theme-color" content="#000000" />
     <meta name="description" content="码上来料-APP下载页" />
     <script>
-      function isIOS() {
-        var u = navigator.userAgent;
-        // var isAndroid = u.indexOf('Android') > -1 || u.indexOf('Adr') > -1; //android终端
-        var isiOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); //ios终端
-        return isiOS
-      }
-      function isWeixin() {
-        var ua = navigator.userAgent.toLowerCase();
-        return ua.match(/MicroMessenger/i) == "micromessenger";
-      }
-      function downloadApk() {
-        if(isWeixin() && !isIOS()) {
-          alert('请点击右上角在【浏览器打开】进行下载');
-          return;
-        }
-        var url = "https://mashangll.oss-accelerate.aliyuncs.com/app-release.apk";
-        if(isIOS()){
-          url = "https://apps.apple.com/cn/app/%E7%9F%A5%E8%AF%86%E7%B2%BE%E7%81%B5/id1630284340";
-        }
-        window.open(url, "_blank");
-      }
+      
     </script>
+     <script src="https://www.google.com/recaptcha/api.js"></script>
+    <script>
+   function onSubmit(token) {
+     document.getElementById("demo-form").submit();
+   }
+ </script>
     <title>码上来料-APP下载页</title>
-    <style>
-      /* These styles make the body full-height */
-      html,
-      body {
-        height: 100%;
-      }
-      /* These styles disable body scrolling if you are using <ScrollView> */
-      body {
-        overflow: hidden;
-        margin-bottom: 50px;
-      }
-      /* These styles make the root element full-height */
-      #root {
-        display: flex;
-        height: 100%;
-      }
-    </style>
   </head>
   
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div
-      style="display: flex; height: 100%; flex-direction: column; justify-content: center; align-items: center; background: #FFFFFF;">
-      <img src="icon-192x192.png" style="width: 100px; height: 100px; margin-bottom: 30px; " />
-      <span style="font-size: 13px;font-weight: 400;color: #888888;margin-bottom: 30px;">下载APP更方便，实时接收作者动态</span>
-      <a onclick="downloadApk()"
-        style="background: #D90000;border-radius: 30px;font-size: 26px; text-align: center; line-height: 50px; font-weight: 500;color: #FFFFFF; height: 50px; width: 70%; margin-bottom: 30px;">立即下载</a>
+      <button class="g-recaptcha" 
+        data-sitekey="reCAPTCHA_site_key" 
+        data-callback='onSubmit' 
+        data-action='submit'>Submit</button>
     </div>
   </body>
 </html>
