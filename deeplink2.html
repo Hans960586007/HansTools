@@ -4,9 +4,29 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <title>deeplink</title>
+    <script>
+        // let button = document.getElementById("deeplinkBtn")
+        // function deeplink(){
+        //     alert("你好，我是一个警告框！");
+        // };
+
+        $(document).ready(function (){
+            $("#deeplinkBtn").on('click',function (){
+                // alert("你好，我是一个警告框！");
+               location.href = 'https://qa.bipsp.com/appshare/h5TZ.html?referralCode=MQ24';
+            });
+        });
+
+       
+        // button.onclick = function (){
+        //     alert("你好，我是一个警告框！");
+        // };
+    </script>
 </head>
 <body>
     <a href="https://qa.bipsp.com/appshare/h5TZ.html?referralCode=MQ24">開啟健康App</a>
+    <button id="deeplinkBtn" onclick="deeplink()">deeplink button</button>
 </body>
 </html>
