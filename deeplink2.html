@@ -7,11 +7,6 @@
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <title>deeplink</title>
     <style>
-        
-        .main{
-            display: grid;
-        }
-
         #deeplinkBtn{
             width: 100px;
             height: 40px;
@@ -24,15 +19,14 @@
     <script>
         $(document).ready(function (){
             $("#deeplinkBtn").on('click',function (){
-                // alert("你好，我是一个警告框！");
-               location.href = 'https://qa.bipsp.com/appshare/h5TZ.html?referralCode=MQ24';
+               location.href = 'https://uat.bipsp.com/appshare/h5TZ.html?referralCode=RE8R';
             });
         });
     </script>
 </head>
 <body>
     <div class="main">
-        <a href="https://qa.bipsp.com/appshare/h5TZ.html?referralCode=MQ24">開啟健康App</a>
+        <a href="https://uat.bipsp.com/appshare/h5TZ.html?referralCode=MQ24">開啟健康App</a>
         <button id="deeplinkBtn" onclick="deeplink()">deeplink button</button>
     </div>
    
